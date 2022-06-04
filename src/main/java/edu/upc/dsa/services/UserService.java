@@ -86,9 +86,9 @@ public class UserService {
 
         List<FAQ> faqs = this.um.listafaqs();
 
-        GenericEntity<List<FAQ>> entity = new GenericEntity<List<FAQ>>(faqs) {};
-        return Response.status(201).entity(entity).build()  ;
-
+        GenericEntity<List<FAQ>> entity = new GenericEntity<List<FAQ>>(faqs) {
+        };
+        return Response.status(201).entity(entity).build();
     }
 
     @POST

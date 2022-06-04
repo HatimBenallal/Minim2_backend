@@ -85,15 +85,24 @@ public class UserManagerImpl implements UserManager {
     }
 
     public List<FAQ> listafaqs() {
-        faqs.add(new FAQ("¿Cual és el correo e atención al clinete?", "juego2D@gmail.com"));
-        faqs.add(new FAQ("¿Se puede jugar online?", "De momento no, en un futuro puede ser"));
-        faqs.add(new FAQ("¿Puedo tener más de una partida a la vez en curso?", "Sí que se puede, al arrancar el juego se permite seleccionar la partida"));
-        faqs.add(new FAQ("¿Puedo mirar las puntaciones, rankings, tiempo, etc?", "Sí, en la parte de estadístícas"));
-        logger.info("faqs cargados");
+        if (faqs.isEmpty()) {
+            faqs.add(new FAQ("What is the customer service email?", "nightmare@dsa1.com"));
+            faqs.add(new FAQ("It can be played online?", "Not at the moment, in the future it may be"));
+            faqs.add(new FAQ("Can I have more than one game in progress at the same time?",
+                    "Yes you can, when you start the game you can select the game"));
+            faqs.add(new FAQ("Can I see the scores, rankings, time, etc?",
+                    "Yes, in the statistics part"));
+            faqs.add(new FAQ("Is the game free?",
+                    "Yes, you can download it completely free"));
+            faqs.add(new FAQ("Can upgrades or items be purchased in-game?",
+                    "You can buy items or upgrades with the coins you get by playing and beating levels. It is not a pay-to-win game."));
+            faqs.add(new FAQ("What can be done on the website?",
+                    "You can check your profile, buy items in the store with game coins, check statistics, register. Just like in the app."));
+        }
+        logger.info("faqs loaded");
         return faqs;
-
-
     }
+
 
     public List<User> getUsers(){
         return users;

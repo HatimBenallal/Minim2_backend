@@ -17,4 +17,5 @@ public interface UserManager {
     public List<User> getUsers();
 
     public List<FAQ> listafaqs ();
+
 }
